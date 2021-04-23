@@ -25,3 +25,32 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Requisitos:
+Tener instalado en el equipo Angular --> Dentro del cmd de nuestro ordenador ponemos: npm i @angular/cli -g 
+					**Instala un programa que nos permite realizar proyectos con Angular
+Visual Studio Code --> link: https://code.visualstudio.com/download
+
+
+###...frameworks y dependendias utilizadas...###
+
+Instalo un código CSS para que se vaya estilizando el proyecto (Como no me quiero focalizar en CSS instalo un framework)
+Utilizaremos bootswatch. Para utilizarlo instalo en el proyecto-------> npm i bootswatch
+
+
+FRONTEND
+
+Comandos en consola dentro de la carpeta del Frontend:
+
+Para abrir un servidor ------------------------------------> ng serve
+Para abrir un servidor en una pestaña del navegador ------->ng serve -o
+
+
+
+Cosas que saber para crear un proyecto con Angular:
+
+CLI de Angular: ng
+Creamos proyecto con la comanda -------> ng new 'nombreDelProyecto'
+Para generar componentes mediante ng --> ng g c 'carpetaComponente/nombreDelComponente'
+Para crear un servicio mediante ng ----> ng g s 'carpetaServicio/nombreDelServicio'
