@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-md-4 p-4">
+    <div class="card">
+      <div class="card-body">
+        <form #seguimientoForm="ngForm" (ngSubmit)="addSeguimiento(seguimientoForm)">
+          <div class="form-group">
+            <input 
+            type="text" 
+            name="nombre" 
+            class="form-control" 
+            placeholder="Nombre de la persona" 
+            [(ngModel)]="seguimientoService.selectedSeguimiento.nombre">
+          </div>
+
+          <div class="form-group">
+            <input type="date" 
+            name="fechaSeguimiento" 
+            class="form-control"
+            placeholder="Introduzca la fecha de seguimiento (aaaa-mm-dd)"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.fechaSeguimiento">
+          </div>
+
+          <div class="form-group">
+            <input type="text" 
+            name="dni" 
+            class="form-control" 
+            placeholder="Introduzca el DNI"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.dni">
+          </div>
+
+          <div class="form-group">
+            <input type="number" 
+            name="telefono" 
+            class="form-control" 
+            placeholder="Introduzca teléfono de contacto"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.telefono">
+          </div>
+
+          <div class="form-group">
+            <input type="text" 
+            name="fiebre" 
+            class="form-control" 
+            placeholder="Fiebre (s/n)"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.fiebre">
+          </div>
+
+          <div class="form-group">
+            <input type="text" 
+            name="tosContinuaPersistente" 
+            class="form-control"
+            placeholder="Tos Continua/Persistente (s/n)"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.tosContinuaPersistente">
+          </div>
+
+          <div class="form-group">
+            <input type="text" 
+            name="dificultadRespiratoria" 
+            class="form-control"
+            placeholder="Dificultad respiratoria (s/n)"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.dificultadRespiratoria">
+          </div>
+
+          <div class="form-group">
+            <input type="text" 
+            name="malestarGeneral" 
+            class="form-control" 
+            placeholder="Malestar (s/n)"
+            [(ngModel)]="seguimientoService.selectedSeguimiento.malestarGeneral">
+          </div>
+
+          <button class="btn btn-primary mr-2">
+            clean
+          </button>
+          <button class="btn btn-secondary">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-14">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha de seguimiento</th>
+          <th>DNI</th>
+          <th>Teléfono</th>
+          <th>Fiebre</th>
+          <th>Tos Continua/Persistente</th>
+          <th>Dificultad respiratoria</th>
+          <th>Malestar general</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let seguimiento of seguimientoService.seguimientos">
+          <td>{{ seguimiento.nombre }}</td>
+          <td>{{ seguimiento.fechaSeguimiento }}</td>
+          <td>{{ seguimiento.dni }}</td>
+          <td>{{ seguimiento.telefono }}</td>
+          <td>{{ seguimiento.fiebre }}</td>
+          <td>{{ seguimiento.tosContinuaPersistente }}</td>
+          <td>{{ seguimiento.dificultadRespiratoria }}</td>
+          <td>{{ seguimiento.malestarGeneral }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteSeguimiento(seguimiento._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
